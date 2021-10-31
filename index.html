@@ -11,12 +11,25 @@
 </head>
 <body>
     <h1>Etch-A-Sketch</h1>
-    <div class="container">
-
-    </div>
     <div class="controls">
-        <label for="color">Color Selector</label>
-        <input id="color" type="color" name="base" value="#ffc600">
-      </div>
+            <label for="color">Color Selector:</label>
+            <input id="color" type="color" name="base" value="#ffc600">
+
+            <label for="grid-size" id=grid-label>Current Canvas Size: 16x16</label>
+            <input id="grid-size" type="range" name="grid-size" min="16" max="100" value="16">
+
+            <label for="reset">Reset Button:</label>
+            <button id="reset">RESET!</button>
+        </div>
+    <div id="modal">
+       <div class="container">
+
+        </div> 
+    </div>
+    
+    <footer>
+        An &copy; Amino Fantino Production
+    </footer>
+    
 </body>
 </html>

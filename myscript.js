@@ -25,13 +25,46 @@ function createBox(size) {
     return box  
 }
 
+function clearBoard() {
+    const boxes = document.querySelectorAll('#box')
+    boxes.forEach(box => box.remove())
+}
+
+function repopulateBoard() {
+    clearBoard();
+    let canvasSize = this.value 
+    populateBoard(canvasSize)
+    addEventListeners()
+    const gridLabel = document.querySelector('#grid-label')
+    gridLabel.textContent= `Current Canvas Size: ${canvasSize}x${canvasSize}`
+}
+
 function updateCell() {
     this.style.backgroundColor = `${color.value}`
 }
 
-populateBoard(32)
+function resetCells() {
+    console.log('hi')
+    const boxes = container.querySelectorAll('#box');
+    for (let i=0; i < boxes.length; i++) {
+        boxes[i].style.backgroundColor = ""
+    }
+}
+
+function addEventListeners() {
+    const boxes = container.querySelectorAll('#box');
+
+    boxes.forEach(box => box.addEventListener('mouseover', updateCell))
+
+    const resetButton = document.querySelector('#reset')
+    resetButton.addEventListener('click', resetCells)
+
+    const gridSizeSelector = document.querySelector('#grid-size')
+    gridSizeSelector.addEventListener('change', repopulateBoard)
+}
+
+populateBoard()
+
+addEventListeners()
 
 
-const boxes = container.querySelectorAll('#box');
-
-boxes.forEach(box => box.addEventListener('mouseover', updateCell))
