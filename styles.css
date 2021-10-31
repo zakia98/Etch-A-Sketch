@@ -1,18 +1,30 @@
+:root {
+    --color: #fc600f
+}
+
 body {
     display:flex;
     flex-flow: column nowrap;
     height:100vh;
+    flex:1;
+    
 }
 
-#container {
+  
+.container {
     display: flex;
-    flex-flow:row wrap;
+    outline:solid 2px;
+    width:600px;
+    height:600px;
+    flex-direction:row;
+    flex-wrap:wrap;
+    flex:auto 0 1;
+    align-self:center;
 }
 
-.box { 
-    min-height:20px;
-    min-width: 20px;
-    outline: black 2px;
-    outline-style: dotted;
+#box {
 
+    padding:0;
+    margin:0;
+    display:flex;
 }
