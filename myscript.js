@@ -63,7 +63,7 @@ function addEventListeners() {
     gridSizeSelector.addEventListener('change', repopulateBoard)
 }
 
-populateBoard()
+populateBoard(16)
 
 addEventListeners()
 
